@@ -4,6 +4,7 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+buildtemp/
 *.exe
 *.spec
 .mypy_cache/
