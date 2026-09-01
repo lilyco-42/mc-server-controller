@@ -1,0 +1,38 @@
+[project]
+name = "mc-server-controller"
+version = "1.0.0"
+description = "Minecraft Server Web Controller - FastAPI + WebSocket"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "nuitka>=4.2",
+    "ordered-set>=4.1.0",
+    "python-multipart>=0.0.32",
+    "uvicorn[standard]",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
+]
+
+[project.scripts]
+mc-controller = "mc_controller:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pyinstaller>=6.22.2",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+]
